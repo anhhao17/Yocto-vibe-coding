@@ -1,0 +1,25 @@
+header:
+  version: 14
+  includes:
+    - kas/base.yml
+    - kas/openembedded.yml
+
+machine: p3768-0000-p3767-0000
+target:
+  - core-image-base
+
+repos:
+  meta-tegra:
+    path: layers/meta-tegra
+    url: https://github.com/OE4T/meta-tegra.git
+
+local_conf_header:
+  tegra: |
+    IMAGE_INSTALL:append = " i2c-tools opensc networkmanager"
+    USE_REDUNDANT_FLASH_LAYOUT = "1"
+    CORE_IMAGE_EXTRA_INSTALL:append = " packagegroup-base"
+
+    INHERIT:remove = "tegra-support-sanity distro_layer_buildinfo"
+    EXTRA_IMAGE_FEATURES ?= "allow-empty-password empty-root-password allow-root-login"
+    PARALLEL_MAKE = "-j 8"
+    BB_NUMBER_THREADS = "8"
