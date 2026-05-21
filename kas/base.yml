@@ -1,0 +1,41 @@
+header:
+  version: 14
+
+distro: poky
+
+defaults:
+  repos:
+    branch: wrynose
+
+repos:
+  bitbake:
+    url: https://git.openembedded.org/bitbake
+    path: layers/bitbake
+    branch: "2.18"
+    layers:
+      bitbake: disabled
+
+  core:
+    url: https://git.openembedded.org/openembedded-core
+    path: layers/oe-core
+    commit: b3aa1a6419bef653cff710fc3359211daf9f7902
+    layers:
+      meta:
+
+  meta-yocto:
+    url: https://git.yoctoproject.org/meta-yocto
+    path: layers/meta-yocto
+    layers:
+      meta-poky:
+
+env:
+  BB_LOGCONFIG: ""
+  BB_HASHSERVE: "auto"
+
+local_conf_header:
+  base: |
+    CONF_VERSION = "2"
+    BB_SERVER_TIMEOUT = "300"
+    INHERIT += "rm_work"
+  extrapackages: |
+    CORE_IMAGE_EXTRA_INSTALL += "perf"

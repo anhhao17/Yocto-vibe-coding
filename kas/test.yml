@@ -1,0 +1,29 @@
+header:
+  version: 14
+  includes:
+    - repo: meta-arm
+      file: ci/qemuarm64-secureboot.yml
+    - repo: meta-arm
+      file: ci/uefi-secureboot.yml
+
+defaults:
+  repos:
+    branch: wrynose
+
+repos:
+  meta-arm:
+    url: https://github.com/jonmason/meta-arm.git
+    path: layers/meta-arm
+    layers:
+      meta-arm:
+      meta-arm-bsp:
+      meta-arm-toolchain:
+
+local_conf_header:
+  rootlogin: |
+    EXTRA_IMAGE_FEATURES:append = " allow-empty-password empty-root-password allow-root-login"
+
+    INIT_MANAGER = "systemd"
+    IMAGE_INSTALL:append = " systemd util-linux"
+    CORE_IMAGE_EXTRA_INSTALL:append:aarch64 = " gator-daemon"
+
