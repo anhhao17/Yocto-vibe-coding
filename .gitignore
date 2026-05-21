@@ -1,0 +1,76 @@
+# Yocto build directories
+build/
+tmp/
+deploy/
+downloads/
+sstate-cache/
+
+# Bitbake configuration (use .sample files instead)
+conf/bblayers.conf
+conf/local.conf
+conf/site.conf
+conf/auto.conf
+conf/templateconf.cfg
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+log/
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
+
+# Keys and secrets (NEVER commit these)
+keys/
+*.pem
+*.key
+*.crt
+*.cer
+secrets/
+.secrets
+
+# Build artifacts
+*.o
+*.a
+*.bin
+*.img
+*.iso
+*.wic
+*.xz
+*.gz
+*.bz2
+
+# QEMU
+*.qcow2
+*.vmdk
+
+# Generated files
+.cache/
+.mypy_cache/
+.pytest_cache/
+
+# Documentation build
+docs/_build/
+
+# Backup files
+*#
+.#*
