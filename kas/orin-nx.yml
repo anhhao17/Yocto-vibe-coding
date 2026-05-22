@@ -7,11 +7,17 @@ header:
 machine: p3768-0000-p3767-0000
 target:
   - core-image-base
+distro: tegrademo
 
 repos:
   meta-tegra:
-    path: layers/meta-tegra
+    path: repos/meta-tegra
     url: https://github.com/OE4T/meta-tegra.git
+  tegra-demo-distro:
+    path: repos/tegra-demo-distro
+    url: https://github.com/OE4T/tegra-demo-distro.git
+    layers:
+      layers/meta-tegrademo:
 
 local_conf_header:
   tegra: |

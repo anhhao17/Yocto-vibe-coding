@@ -4,7 +4,7 @@ header:
 repos:
   meta-openembedded:
       url: https://git.openembedded.org/meta-openembedded
-      path: layers/meta-openembedded
+      path: repos/meta-openembedded
       layers:
         meta-oe:
         meta-python:

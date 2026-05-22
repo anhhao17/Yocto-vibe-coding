@@ -10,21 +10,20 @@ defaults:
 repos:
   bitbake:
     url: https://git.openembedded.org/bitbake
-    path: layers/bitbake
+    path: repos/bitbake
     branch: "2.18"
     layers:
       bitbake: disabled
 
   core:
     url: https://git.openembedded.org/openembedded-core
-    path: layers/oe-core
-    commit: b3aa1a6419bef653cff710fc3359211daf9f7902
+    path: repos/oe-core
     layers:
       meta:
 
   meta-yocto:
     url: https://git.yoctoproject.org/meta-yocto
-    path: layers/meta-yocto
+    path: repos/meta-yocto
     layers:
       meta-poky:
 
@@ -37,5 +36,3 @@ local_conf_header:
     CONF_VERSION = "2"
     BB_SERVER_TIMEOUT = "300"
     INHERIT += "rm_work"
-  extrapackages: |
-    CORE_IMAGE_EXTRA_INSTALL += "perf"

@@ -13,7 +13,7 @@ defaults:
 repos:
   meta-arm:
     url: https://github.com/jonmason/meta-arm.git
-    path: layers/meta-arm
+    path: repos/meta-arm
     layers:
       meta-arm:
       meta-arm-bsp:

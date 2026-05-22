@@ -11,7 +11,7 @@ target:
 repos:
   meta-arm:
     url: https://github.com/jonmason/meta-arm.git
-    path: layers/meta-arm
+    path: repos/meta-arm
     layers:
       meta-arm:
       meta-arm-bsp:
@@ -23,3 +23,4 @@ local_conf_header:
     TEST_SUITES:append = " optee ftpm"
     INIT_MANAGER = "systemd"
     CORE_IMAGE_EXTRA_INSTALL:append:aarch64 = " gator-daemon"
+    EXTRA_IMAGE_FEATURES ?= "allow-empty-password empty-root-password allow-root-login"

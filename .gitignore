@@ -6,8 +6,8 @@ downloads/
 sstate-cache/
 
 meta-*
-layers
 bitbake
 core
 .devin
 .kas*
+flash
