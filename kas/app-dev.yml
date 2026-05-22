@@ -1,0 +1,11 @@
+header:
+  version: 14
+
+repos:
+  meta-jetson:
+    layers:
+      layers/meta-jetson:
+
+local_conf_header:
+  license: |
+    LICENSE_FLAGS_ACCEPTED += "commercial"

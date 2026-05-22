@@ -3,10 +3,11 @@ header:
   includes:
     - kas/base.yml
     - kas/openembedded.yml
+    - kas/app-dev.yml
 
 machine: p3768-0000-p3767-0000
 target:
-  - core-image-base
+  - demo-image-base
 distro: tegrademo
 
 repos:
@@ -21,7 +22,7 @@ repos:
 
 local_conf_header:
   tegra: |
-    IMAGE_INSTALL:append = " i2c-tools opensc networkmanager"
+    IMAGE_INSTALL:append = " i2c-tools opensc networkmanager qwerty"
     USE_REDUNDANT_FLASH_LAYOUT = "1"
     CORE_IMAGE_EXTRA_INSTALL:append = " packagegroup-base"
 
